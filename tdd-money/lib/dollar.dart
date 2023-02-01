@@ -1,7 +1,7 @@
 class Dollar {
-  Dollar(this.amount);
+  const Dollar(this.amount);
 
-  int amount;
+  final int amount;
   Dollar times(int multiplier) {
     return Dollar(amount * multiplier);
   }
