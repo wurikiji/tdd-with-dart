@@ -10,5 +10,9 @@ void main() {
       final result2 = five.times(3);
       expect(result2.amount, equals(15));
     });
+
+    test('should be same with same amount', () {
+      expect(Dollar(5), equals(Dollar(5)));
+    });
   });
 }
