@@ -1,16 +1,15 @@
 import 'package:tdd_money/money.dart';
 
 class Dollar extends Money {
-  const Dollar(this._amount);
+  const Dollar(super.amount);
 
-  final int _amount;
   Dollar times(int multiplier) {
-    return Dollar(_amount * multiplier);
+    return Dollar(amount * multiplier);
   }
 
   @override
   bool operator ==(Object? other) {
     if (identical(this, other)) return true;
-    return other is Dollar && other._amount == _amount;
+    return other is Dollar && other.amount == amount;
   }
 }
