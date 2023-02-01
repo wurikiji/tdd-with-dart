@@ -6,9 +6,9 @@ void main() {
     test('can multiply a number', () {
       final five = Dollar(5);
       final result = five.times(2);
-      expect(result.amount, equals(10));
+      expect(result, equals(Dollar(10)));
       final result2 = five.times(3);
-      expect(result2.amount, equals(15));
+      expect(result2, equals(Dollar(15)));
     });
 
     test('should be same with same amount', () {
