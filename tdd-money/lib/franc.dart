@@ -1,4 +1,6 @@
-class Franc {
+import 'package:tdd_money/money.dart';
+
+class Franc extends Money {
   const Franc(this._amount);
 
   final int _amount;

@@ -1,1 +1,3 @@
-class Money {}
+class Money {
+  const Money();
+}
