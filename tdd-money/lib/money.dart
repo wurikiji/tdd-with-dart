@@ -8,6 +8,8 @@ class Money {
   @override
   bool operator ==(Object? other) {
     if (identical(this, other)) return true;
-    return other is Money && other.amount == amount;
+    return runtimeType == other.runtimeType &&
+        other is Money &&
+        other.amount == amount;
   }
 }
