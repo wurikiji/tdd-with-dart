@@ -13,6 +13,7 @@ void main() {
 
     test('should be same with same amount', () {
       expect(Dollar(5), equals(Dollar(5)));
+      expect(Dollar(6), isNot(equals(Dollar(5))));
     });
   });
 }

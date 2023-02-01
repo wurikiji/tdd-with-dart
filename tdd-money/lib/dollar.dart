@@ -8,6 +8,7 @@ class Dollar {
 
   @override
   bool operator ==(Object? other) {
-    return true;
+    if (identical(this, other)) return true;
+    return other is Dollar && other.amount == amount;
   }
 }
