@@ -6,10 +6,4 @@ class Franc extends Money {
   Franc times(int multiplier) {
     return Franc(amount * multiplier);
   }
-
-  @override
-  bool operator ==(Object? other) {
-    if (identical(this, other)) return true;
-    return other is Money && other.amount == amount;
-  }
 }
