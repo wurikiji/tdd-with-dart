@@ -10,6 +10,6 @@ class Dollar extends Money {
   @override
   bool operator ==(Object? other) {
     if (identical(this, other)) return true;
-    return other is Dollar && other.amount == amount;
+    return other is Money && other.amount == amount;
   }
 }
