@@ -5,8 +5,10 @@ void main() {
   group('Dollar', () {
     test('can multiply a number', () {
       final five = Dollar(5);
-      five.times(2);
-      expect(five.amount, equals(10));
+      final result = five.times(2);
+      expect(result.amount, equals(10));
+      final result2 = five.times(3);
+      expect(result2.amount, equals(15));
     });
   });
 }
