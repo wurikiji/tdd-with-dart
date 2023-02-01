@@ -1,14 +1,14 @@
 class Dollar {
-  const Dollar(this.amount);
+  const Dollar(this._amount);
 
-  final int amount;
+  final int _amount;
   Dollar times(int multiplier) {
-    return Dollar(amount * multiplier);
+    return Dollar(_amount * multiplier);
   }
 
   @override
   bool operator ==(Object? other) {
     if (identical(this, other)) return true;
-    return other is Dollar && other.amount == amount;
+    return other is Dollar && other._amount == _amount;
   }
 }
