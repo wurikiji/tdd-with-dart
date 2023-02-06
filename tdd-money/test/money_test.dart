@@ -76,8 +76,8 @@ void main() {
     });
 
     test('mixed addition', () {
-      final fiveBucks = Money.dollar(5);
-      final tenFrancs = Money.franc(10);
+      final Expression fiveBucks = Money.dollar(5);
+      final Expression tenFrancs = Money.franc(10);
       final bank = Bank();
       bank.addRate("CHF", "USD", 2);
       final result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
