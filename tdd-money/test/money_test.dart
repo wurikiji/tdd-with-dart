@@ -69,6 +69,11 @@ void main() {
       final result = bank.reduce(Money.franc(2), 'USD');
       expect(result, Money.dollar(1));
     });
+
+    test('identity rate', () {
+      expect(Bank().rate("USD", "USD"), 1);
+      expect(Bank().rate("CHF", "CHF"), 1);
+    });
   });
   group('Pair', () {
     test('equals', () {
