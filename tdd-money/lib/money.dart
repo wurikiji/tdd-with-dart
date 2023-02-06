@@ -1,9 +1,7 @@
-import 'package:meta/meta.dart';
 import 'package:tdd_money/expression.dart';
 
 class Money extends Expression {
   const Money(this.amount, this._currency);
-  @protected
   final int amount;
   final String _currency;
 

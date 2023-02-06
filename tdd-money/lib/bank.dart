@@ -3,6 +3,8 @@ import 'package:tdd_money/money.dart';
 
 class Bank {
   Money reduce(Expression source, String to) {
-    return Money.dollar(10);
+    final sum = source as Sum;
+    final amount = sum.augend.amount + sum.addend.amount;
+    return Money(amount, to);
   }
 }
