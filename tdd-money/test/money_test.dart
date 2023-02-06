@@ -1,13 +1,18 @@
-import 'package:tdd_money/dollar.dart';
-import 'package:tdd_money/franc.dart';
 import 'package:tdd_money/money.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('Money', () {
     test("Franc and Dollar shouldn't be equal", () {
-      expect(Franc(5), isNot(equals(Dollar(5))));
-      expect(Dollar(5), isNot(equals(Franc(5))));
+      expect(Money.franc(5), isNot(equals(Money.dollar(5))));
+      expect(Money.dollar(5), isNot(equals(Money.franc(5))));
+    });
+
+    test('properly compares Money objects', () {
+      expect(Money.franc(5), Money.franc(5));
+      expect(Money.franc(5), isNot(Money.franc(6)));
+      expect(Money.dollar(5), Money.dollar(5));
+      expect(Money.dollar(5), isNot(Money.dollar(6)));
     });
 
     test("can create dollar and multiply", () {
@@ -28,8 +33,8 @@ void main() {
     });
 
     test("equals with same currency", () {
-      expect(Money(5, "CHF"), Franc(5));
-      expect(Money(5, "USD"), Dollar(5));
+      expect(Money(5, "CHF"), Money.franc(5));
+      expect(Money(5, "USD"), Money.dollar(5));
     });
   });
 }
