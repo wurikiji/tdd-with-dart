@@ -15,7 +15,7 @@ class Money extends Expression {
   }
 
   Expression plus(Money addend) {
-    return Money(amount + addend.amount, currency());
+    return Sum(this, addend);
   }
 
   String currency() => _currency;
