@@ -43,7 +43,8 @@ void main() {
   group('Money interoperability', () {
     test('simple addition', () {
       final five = Money.dollar(5);
-      final Expression sum = five.plus(five);
+      final Expression result = five.plus(five);
+      final Sum sum = result as Sum;
       final bank = Bank();
       final Money reduced = bank.reduce(sum, "USD");
       expect(reduced, Money.dollar(10));
