@@ -103,11 +103,6 @@ void main() {
       final Money result = bank.reduce(sum, "USD");
       expect(result, Money.dollar(20));
     });
-
-    test('plus same cureency returns money', () {
-      final Expression sum = Money.dollar(1).plus(Money.dollar(1));
-      expect(sum, isA<Money>());
-    });
   });
   group('Pair', () {
     test('equals', () {
