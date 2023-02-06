@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:tdd_money/dollar.dart';
 import 'package:tdd_money/franc.dart';
 
-class Money {
+abstract class Money {
   const Money(this.amount, this._currency);
   @protected
   final int amount;
@@ -11,7 +11,7 @@ class Money {
   factory Money.dollar(int amount) => Dollar(amount, "USD");
   factory Money.franc(int amount) => Franc(amount, "CHF");
 
-  Money times(int multiplier) => this;
+  Money times(int multiplier);
 
   String currency() => _currency;
 
@@ -20,10 +20,5 @@ class Money {
     return runtimeType == other.runtimeType &&
         other is Money &&
         other.amount == amount;
-  }
-
-  @override
-  String toString() {
-    return '$amount $_currency';
   }
 }
