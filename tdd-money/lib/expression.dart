@@ -1,9 +1,11 @@
+import 'package:tdd_money/bank.dart';
+
 import 'money.dart';
 
 abstract class Expression {
   const Expression();
 
-  Money reduce(String to);
+  Money reduce(Bank bank, String to);
 }
 
 class Sum extends Expression {
@@ -12,7 +14,7 @@ class Sum extends Expression {
   final Money addend;
 
   @override
-  Money reduce(String to) {
+  Money reduce(Bank bank, String to) {
     final amount = augend.amount + addend.amount;
     return Money(amount, to);
   }

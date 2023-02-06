@@ -1,3 +1,4 @@
+import 'package:tdd_money/bank.dart';
 import 'package:tdd_money/expression.dart';
 
 class Money extends Expression {
@@ -17,8 +18,9 @@ class Money extends Expression {
   }
 
   @override
-  Money reduce(String to) {
-    return this;
+  Money reduce(Bank bank, String to) {
+    final rate = bank.rate(currency(), to);
+    return Money(amount ~/ rate, to);
   }
 
   String currency() => _currency;

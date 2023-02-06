@@ -62,5 +62,12 @@ void main() {
       final result = bank.reduce(Money.dollar(1), 'USD');
       expect(result, Money.dollar(1));
     });
+
+    test('reduce money different currency', () {
+      final bank = Bank();
+      bank.addRate("CHF", "USD", 2);
+      final result = bank.reduce(Money.franc(2), 'USD');
+      expect(result, Money.dollar(1));
+    });
   });
 }
