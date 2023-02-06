@@ -34,6 +34,8 @@ class Money extends Expression {
         other.amount == amount;
   }
 
+  // coverage:ignore-start
   @override
   String toString() => '$amount $_currency';
+  // coverage:ignore-end
 }
