@@ -21,4 +21,9 @@ class Money {
         other is Money &&
         other.amount == amount;
   }
+
+  @override
+  String toString() {
+    return '$amount $_currency';
+  }
 }
