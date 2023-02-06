@@ -44,7 +44,7 @@ void main() {
     test('simple addition', () {
       final five = Money.dollar(5);
       final Expression result = five.plus(five);
-      final Sum sum = result as Sum;
+      final Expression sum = result;
       final bank = Bank();
       final Money reduced = bank.reduce(sum, "USD");
       expect(reduced, Money.dollar(10));
@@ -102,6 +102,11 @@ void main() {
       final Expression sum = Sum(fiveBucks, tenFrancs).times(2);
       final Money result = bank.reduce(sum, "USD");
       expect(result, Money.dollar(20));
+    });
+
+    test('plus same cureency returns money', () {
+      final Expression sum = Money.dollar(1).plus(Money.dollar(1));
+      expect(sum, isA<Money>());
     });
   });
   group('Pair', () {
