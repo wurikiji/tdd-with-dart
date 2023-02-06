@@ -12,8 +12,8 @@ void main() {
 
     test("can create dollar and multiply", () {
       final Money five = Money.dollar(5);
-      expect(five.times(2), Dollar(10));
-      expect(five.times(3), Dollar(15));
+      expect(five.times(2), Money.dollar(10));
+      expect(five.times(3), Money.dollar(15));
     });
   });
 }
