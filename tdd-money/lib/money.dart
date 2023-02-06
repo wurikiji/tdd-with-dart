@@ -11,7 +11,9 @@ class Money {
   factory Money.dollar(int amount) => Dollar(amount, "USD");
   factory Money.franc(int amount) => Franc(amount, "CHF");
 
-  Money times(int multiplier) => this;
+  Money times(int multiplier) {
+    return Money(amount * multiplier, currency());
+  }
 
   String currency() => _currency;
 
