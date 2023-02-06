@@ -8,7 +8,7 @@ abstract class Money {
 
   factory Money.dollar(int amount) => Dollar(amount);
 
-  Money times(int mupltiplier);
+  Money times(int multiplier);
 
   @override
   bool operator ==(Object? other) {
