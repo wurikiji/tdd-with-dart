@@ -16,6 +16,11 @@ class Money extends Expression {
     return Sum(this, addend);
   }
 
+  @override
+  Money reduce(String to) {
+    return this;
+  }
+
   String currency() => _currency;
 
   @override
