@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 import 'package:tdd_money/dollar.dart';
 import 'package:tdd_money/franc.dart';
 
-abstract class Money {
+class Money {
   const Money(this.amount, this._currency);
   @protected
   final int amount;
@@ -11,7 +11,7 @@ abstract class Money {
   factory Money.dollar(int amount) => Dollar(amount, "USD");
   factory Money.franc(int amount) => Franc(amount, "CHF");
 
-  Money times(int multiplier);
+  Money times(int multiplier) => this;
 
   String currency() => _currency;
 
@@ -21,4 +21,7 @@ abstract class Money {
         other is Money &&
         other.amount == amount;
   }
+
+  @override
+  String toString() => '$amount $_currency';
 }
