@@ -11,7 +11,7 @@ void main() {
     });
 
     test("can create dollar", () {
-      final Dollar five = Money.dollar(5);
+      final Money five = Money.dollar(5);
     });
   });
 }
