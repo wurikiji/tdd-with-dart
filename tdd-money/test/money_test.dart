@@ -10,8 +10,10 @@ void main() {
       expect(Dollar(5), isNot(equals(Franc(5))));
     });
 
-    test("can create dollar", () {
+    test("can create dollar and multiply", () {
       final Money five = Money.dollar(5);
+      expect(five.times(2), Dollar(10));
+      expect(five.times(3), Dollar(15));
     });
   });
 }
