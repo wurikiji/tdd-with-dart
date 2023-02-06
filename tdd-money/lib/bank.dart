@@ -8,10 +8,13 @@ class Bank {
   }
 
   int rate(String from, String to) {
-    return (from == 'CHF' && to == 'USD') ? 2 : 1;
+    if (from == to) return 1;
+    return rates[Pair(from, to)]!;
   }
 
-  void addRate(String from, String to, int rate) {}
+  void addRate(String from, String to, int rate) {
+    rates[Pair(from, to)] = rate;
+  }
 }
 
 class Pair {
