@@ -70,4 +70,12 @@ void main() {
       expect(result, Money.dollar(1));
     });
   });
+  group('Pair', () {
+    test('equals', () {
+      expect(Pair("CHF", "USD"), equals(Pair("CHF", "USD")));
+      expect(Pair("USD", "USD"), equals(Pair("USD", "USD")));
+      expect(Pair("USD", "CHF"), equals(Pair("USD", "CHF")));
+      expect(Pair("USD", "CHF"), isNot(equals(Pair("CHF", "USD"))));
+    });
+  });
 }
