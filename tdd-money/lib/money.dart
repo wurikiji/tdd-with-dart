@@ -17,8 +17,8 @@ class Money {
 
   @override
   bool operator ==(Object? other) {
-    return runtimeType == other.runtimeType &&
-        other is Money &&
+    return other is Money &&
+        _currency == other._currency &&
         other.amount == amount;
   }
 
