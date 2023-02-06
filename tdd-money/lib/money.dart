@@ -12,6 +12,8 @@ abstract class Money {
 
   Money times(int multiplier);
 
+  String currency();
+
   @override
   bool operator ==(Object? other) {
     return runtimeType == other.runtimeType &&

@@ -7,4 +7,7 @@ class Franc extends Money {
   Money times(int multiplier) {
     return Franc(amount * multiplier);
   }
+
+  @override
+  String currency() => "CHF";
 }
