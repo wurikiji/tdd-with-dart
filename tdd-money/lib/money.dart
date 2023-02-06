@@ -1,6 +1,7 @@
 import 'package:meta/meta.dart';
+import 'package:tdd_money/expression.dart';
 
-class Money {
+class Money extends Expression {
   const Money(this.amount, this._currency);
   @protected
   final int amount;
@@ -13,7 +14,7 @@ class Money {
     return Money(amount * multiplier, currency());
   }
 
-  Money plus(Money addend) {
+  Expression plus(Money addend) {
     return Money(amount + addend.amount, currency());
   }
 

@@ -1,3 +1,5 @@
+import 'package:tdd_money/bank.dart';
+import 'package:tdd_money/expression.dart';
 import 'package:tdd_money/money.dart';
 import 'package:test/test.dart';
 
@@ -40,7 +42,7 @@ void main() {
 
   group('Money interoperability', () {
     test('simple addition', () {
-      final sum = Money.dollar(5).plus(Money.dollar(5));
+      final Expression sum = Money.dollar(5).plus(Money.dollar(5));
       final bank = Bank();
       final Money reduced = bank.reduce(sum, "USD");
       expect(reduced, Money.dollar(10));
