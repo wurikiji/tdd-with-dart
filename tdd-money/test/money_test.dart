@@ -29,6 +29,7 @@ void main() {
 
     test("equals with same currency", () {
       expect(Money(5, "CHF"), Franc(5));
+      expect(Money(5, "USD"), Dollar(5));
     });
   });
 }
