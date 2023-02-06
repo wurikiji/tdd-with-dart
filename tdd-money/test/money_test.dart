@@ -41,7 +41,9 @@ void main() {
   group('Money interoperability', () {
     test('simple addition', () {
       final sum = Money.dollar(5).plus(Money.dollar(5));
-      expect(sum, Money.dollar(10));
+      final bank = Bank();
+      final Money reduced = bank.reduce(sum, "USD");
+      expect(reduced, Money.dollar(10));
     });
   });
 }
