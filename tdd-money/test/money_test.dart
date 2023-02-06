@@ -74,6 +74,15 @@ void main() {
       expect(Bank().rate("USD", "USD"), 1);
       expect(Bank().rate("CHF", "CHF"), 1);
     });
+
+    test('mixed addition', () {
+      final fiveBucks = Money.dollar(5);
+      final tenFrancs = Money.franc(10);
+      final bank = Bank();
+      bank.addRate("CHF", "USD", 2);
+      final result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+      expect(result, Money.dollar(10));
+    });
   });
   group('Pair', () {
     test('equals', () {
