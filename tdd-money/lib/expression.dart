@@ -21,6 +21,10 @@ class Sum extends Expression {
     return Money(amount, to);
   }
 
+  Expression times(int multiplier) {
+    return Sum(augend.times(multiplier), addend.times(multiplier));
+  }
+
   @override
   Expression plus(Expression addend) {
     return Sum(this, addend);
