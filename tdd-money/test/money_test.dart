@@ -49,5 +49,12 @@ void main() {
       final Money reduced = bank.reduce(sum, "USD");
       expect(reduced, Money.dollar(10));
     });
+
+    test('reduce sum', () {
+      final sum = Sum(Money.dollar(3), Money.dollar(4));
+      final bank = Bank();
+      final result = bank.reduce(sum, 'USD');
+      expect(result, Money.dollar(7));
+    });
   });
 }
