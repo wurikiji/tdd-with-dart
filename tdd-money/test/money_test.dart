@@ -15,5 +15,11 @@ void main() {
       expect(five.times(2), Money.dollar(10));
       expect(five.times(3), Money.dollar(15));
     });
+
+    test("can create franc and multiply", () {
+      final Money five = Money.franc(5);
+      expect(five.times(2), Money.franc(10));
+      expect(five.times(3), Money.franc(15));
+    });
   });
 }
