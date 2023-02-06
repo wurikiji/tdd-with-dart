@@ -21,5 +21,10 @@ void main() {
       expect(five.times(2), Money.franc(10));
       expect(five.times(3), Money.franc(15));
     });
+
+    test("has currency", () {
+      expect(Money.dollar(1).currency(), equals("USD"));
+      expect(Money.franc(1).currency(), equals("CHF"));
+    });
   });
 }
