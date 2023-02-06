@@ -37,4 +37,11 @@ void main() {
       expect(Money(5, "USD"), Money.dollar(5));
     });
   });
+
+  group('Money interoperability', () {
+    test('simple addition', () {
+      final sum = Money.dollar(5).plus(Money.dollar(5));
+      expect(sum, Money.dollar(10));
+    });
+  });
 }
