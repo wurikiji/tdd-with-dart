@@ -16,6 +16,9 @@ class Money extends Expression {
 
   @override
   Expression plus(Expression addend) {
+    if (addend is Money && addend.currency() == currency()) {
+      return Money(amount + addend.amount, currency());
+    }
     return Sum(this, addend);
   }
 
