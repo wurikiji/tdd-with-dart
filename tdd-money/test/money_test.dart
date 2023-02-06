@@ -93,6 +93,16 @@ void main() {
       final Money result = bank.reduce(sum, "USD");
       expect(result, Money.dollar(15));
     });
+
+    test('Sum times', () {
+      final Expression fiveBucks = Money.dollar(5);
+      final Expression tenFrancs = Money.franc(10);
+      final bank = Bank();
+      bank.addRate("CHF", "USD", 2);
+      final Expression sum = Sum(fiveBucks, tenFrancs).times(2);
+      final Money result = bank.reduce(sum, "USD");
+      expect(result, Money.dollar(20));
+    });
   });
   group('Pair', () {
     test('equals', () {
