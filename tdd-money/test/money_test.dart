@@ -26,5 +26,9 @@ void main() {
       expect(Money.dollar(1).currency(), equals("USD"));
       expect(Money.franc(1).currency(), equals("CHF"));
     });
+
+    test("equals with same currency", () {
+      expect(Money(5, "CHF"), Franc(5));
+    });
   });
 }
