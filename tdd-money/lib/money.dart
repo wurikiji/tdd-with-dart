@@ -13,6 +13,10 @@ class Money {
     return Money(amount * multiplier, currency());
   }
 
+  Money plus(Money addend) {
+    return Money(amount + addend.amount, currency());
+  }
+
   String currency() => _currency;
 
   @override
