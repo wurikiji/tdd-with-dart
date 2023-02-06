@@ -10,8 +10,8 @@ abstract class Expression {
 
 class Sum extends Expression {
   const Sum(this.augend, this.addend);
-  final Money augend;
-  final Money addend;
+  final Expression augend;
+  final Expression addend;
 
   @override
   Money reduce(Bank bank, String to) {
