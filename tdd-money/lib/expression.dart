@@ -6,6 +6,7 @@ abstract class Expression {
   const Expression();
 
   Money reduce(Bank bank, String to);
+  Expression plus(Expression addend);
 }
 
 class Sum extends Expression {
@@ -18,5 +19,10 @@ class Sum extends Expression {
     final amount =
         augend.reduce(bank, to).amount + addend.reduce(bank, to).amount;
     return Money(amount, to);
+  }
+
+  @override
+  Expression plus(Expression addend) {
+    return Sum(this, addend);
   }
 }
