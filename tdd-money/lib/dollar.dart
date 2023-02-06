@@ -1,7 +1,10 @@
 import 'package:tdd_money/money.dart';
 
 class Dollar extends Money {
-  const Dollar(super.amount);
+  Dollar(super.amount) {
+    _currency = "USD";
+  }
+  late final _currency;
 
   @override
   Money times(int multiplier) {
@@ -9,5 +12,5 @@ class Dollar extends Money {
   }
 
   @override
-  String currency() => "USD";
+  String currency() => _currency;
 }

@@ -1,7 +1,10 @@
 import 'package:tdd_money/money.dart';
 
 class Franc extends Money {
-  const Franc(super.amount);
+  Franc(super.amount) {
+    _currency = "CHF";
+  }
+  late final String _currency;
 
   @override
   Money times(int multiplier) {
@@ -9,5 +12,5 @@ class Franc extends Money {
   }
 
   @override
-  String currency() => "CHF";
+  String currency() => _currency;
 }
