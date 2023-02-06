@@ -7,6 +7,7 @@ abstract class Expression {
 
   Money reduce(Bank bank, String to);
   Expression plus(Expression addend);
+  Expression times(int multiplier);
 }
 
 class Sum extends Expression {
@@ -21,6 +22,7 @@ class Sum extends Expression {
     return Money(amount, to);
   }
 
+  @override
   Expression times(int multiplier) {
     return Sum(augend.times(multiplier), addend.times(multiplier));
   }

@@ -9,10 +9,12 @@ class Money extends Expression {
   factory Money.dollar(int amount) => Money(amount, "USD");
   factory Money.franc(int amount) => Money(amount, "CHF");
 
+  @override
   Expression times(int multiplier) {
     return Money(amount * multiplier, currency());
   }
 
+  @override
   Expression plus(Expression addend) {
     return Sum(this, addend);
   }
